@@ -2,14 +2,32 @@
 const nav = document.getElementById("navbar");
 const fixnav = nav.offsetTop;
 window.onscroll = function myFunction(){
-    if (window.pageYOffset > fixnav){ 
-        nav.style.backgroundColor = "crimson"
+    if (window.pageYOffset > fixnav){
+        nav.style.backgroundColor = "crimson";
     }else{
-        nav.style.backgroundColor = "transparent"
+        nav.style.backgroundColor = "transparent";
     }
 }
 /*navbar*/
 
+
+/*Menu Mobile*/
+const menu = document.getElementById("menu");
+const widgetMenu = document.getElementById("widget-menu");
+const line1 = document.getElementsByClassName("line")[0];
+const line2 = document.getElementsByClassName("line")[1];
+const line3 = document.getElementsByClassName("line")[2];
+menu.onclick = function btnMenu(){
+    if(widgetMenu.style.left=="0px"){
+        widgetMenu.style.left="-320px";
+    }else{
+        widgetMenu.style.left="0";
+    }
+    line1.style.transform = (line1.style.transform=="rotate(45deg)") ? "rotate(0deg)" : "rotate(45deg)";
+    line2.style.transform = (line2.style.transform=="rotate(-45deg)") ? "rotate(0deg)" : "rotate(-45deg)";
+    line3.style.transform = (line3.style.transform=="rotate(45deg)") ? "rotate(0deg)" : "rotate(45deg)";
+}
+/*Akhir Mobile*/
 /*header*/
 const dynamicText = document.getElementById("hero-p");
 const words = ["Pajak", "Akuntansi", "Keuangan", "Audit"];
